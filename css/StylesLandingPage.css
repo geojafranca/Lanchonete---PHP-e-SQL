@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+section:nth-of-type(2) {
+    position: fixed;
+    bottom: 0px;
+    height: 40vh;
+    width: 100vw;
+    background-image: url('../assets/hamburguer\ bg\ preto\ fosco.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: rgb(0, 0, 0) 1px solid;
+}
+
+section:nth-of-type(1) {
+    background-color: #ffffff;
+    height: 60vh;
+}
+
+#init-lading-page{
+    color: #23232e;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+
+.btnAcess {
+    margin-top: 4rem;
+}
+
+.btnAcess a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 15px;
+    width: 10vw;
+    color: #ffffff;
+    margin-top: 2rem;
+    outline: none;
+    letter-spacing: 0px;
+    border: none;
+    border-radius: 15px;
+    background-color: #23232e;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAcess a:hover {
+    padding: 20px;
+    transition: .1s all;
+}
+
+
+
