@@ -1,0 +1,272 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*/////////////////////////////////////////////////////////////////////////// NAV BAR //////////////////////////////////////////////////////////////////////////*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20vw; padding-left: 20vw;
+    height: 8vh;
+    background-color: #eee;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.logo {
+    font-weight: 800;
+    color: #69aff5;
+    background-color: #ffffff;
+    width: 10vw;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    letter-spacing: 1px;
+}
+
+.navbar > ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar > ul > li {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar > ul > li > a {
+    color: #69aff5;
+    text-decoration: none;
+    margin-left: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar > ul > li > a:hover{
+    border-bottom: 1px solid #69aff5;
+
+}
+
+/*/////////////////////////////////////////main/////////////////////////////////////////*/
+
+.main-container {
+    min-height: 84vh; 
+    background-color: #23232e;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.main-container > h1 {
+    color: #69aff5;
+    margin-bottom: 2rem;
+}
+
+.produtos-cadastrados {
+    color: #69aff5;
+    background-color: #eee;
+    min-height: 30vh;
+    display: flex; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 50%; 
+    max-width: 80%;
+    padding: 30px;
+    border-radius: 10px;
+    overflow-y: auto; 
+    max-height: 50vh; 
+}
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin-left: 50px;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    min-width: 200px;
+}
+
+
+.action {
+    display: flex;
+}
+
+.action input {
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.action label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.action button {
+    outline: none;
+    border: 1px solid #69aff5;
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #69aff5;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.action button:hover {
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.action form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+}
+
+/* preço */
+
+.postagem {
+    margin-left: 10vw;
+    
+}
+
+/*estoque*/
+
+.estoque-qtd {
+    color: #69aff5;
+}
+
+/* excluir */
+
+.delete form > button {
+    outline: none;
+    border: 1px solid #69aff5;
+    padding: 10px;
+    width: 5vw;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #69aff5;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.delete form > button:hover {
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.delete input {
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.delete label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.delete {
+   margin-left: 10vw;
+}
+
+/*atualizar*/
+
+.prod-att {
+    border: 1px solid black;
+    padding: 10rem;
+}
+
+/*fabri*/ 
+
+
+.fabri > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prod-fabri {
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin-left: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    min-width: 200px;
+}
+
+.fabri form > button {
+    outline: none;
+    border: 1px solid #69aff5;
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #69aff5;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    }
+    
+.fabri form > button:hover {
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+    
+.fabri input {
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    }
+    
+.fabri label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    }
+    
+.fabri {
+    display: flex;
+}
+
+.lastp {
+    margin-left: 10vw;
+}
+
+
+/*/////////////////////////////////////////footer/////////////////////////////////////////*/
+
+.footer-container {
+    height: 8vh;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

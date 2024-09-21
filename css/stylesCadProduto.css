@@ -1,0 +1,165 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-cad {
+    width: 100vw;
+    height: 100vh;
+    background-color:#eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.left-cad {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.left-cad > h1 {
+    font-size: 2vw;
+    color: #6088b0;
+    font-weight: 800;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.left-cad > img {
+    width: 30vw;
+}
+
+.right-cad {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cad {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: #23232e;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-cad > h1 {
+    color: #69aff5;
+    font-weight: 800;
+    margin: 0;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+form > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff ;
+    color: #23232e;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+form > label {
+    color:#ffffff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+form > input::placeholder {
+    color: #23232e; 
+}
+
+.btn-cad {
+    width: 100%;
+    padding: 16px 0px;
+    border:none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;    
+    letter-spacing: 2px;
+    background-color: #69aff5;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.btn-cad:hover {
+    transition: 0.5s;
+    background-color: #ffffff;
+    color: #69aff5;
+    
+}
+
+.card-cad > span > a {
+    font-size: 0.7vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .card-cad > span > a {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .card-cad {
+        width: 85%;
+        margin-right: 10vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .main-cad {
+        flex-direction: column;
+    }
+    .left-cad > h1 {
+        display: none;
+    }
+    .left-cad > img {
+        width: 100%;    
+    }
+    .right-cad {
+        margin-bottom: 10vh;
+        width: 90%;
+        margin-left: 10vw;
+    }
+    .card-cad > span > a {
+        font-size: 1.5vw;
+    }
+}
