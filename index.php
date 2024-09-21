@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/StylesIndex.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Lanchonete França</title>
+    <title>FranBeBeu produtos</title>
 </head>
 <body>
     <main>
         <section id="container1">
            <div id="init-lading-page"> 
-                <p>Bem vindos a lanchonete FranBeBeu</p>
+                <p>Bem vindos a FranBeBeu</p>
                 <br>    
-                <p>Aqui, seu lanche é preparado por você mesmo</p>
+                <p>Aqui, você cadastras seus produtos</p>
 
                 <div class="btnAcess">
                     <a href="pages/home.php"> Acessar </a>
