@@ -1,26 +1,19 @@
 <?php
 include 'conexao.php'; // Inclui a conexão com o banco de dados
 
-$produtos = []; // Array para armazenar produtos
-$fabricante = ""; // Inicializa a variável fabricante
+// Verifica se o formulário foi enviado e se o código foi fornecido
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cod'])) {
+    $cod = trim($_POST['cod']);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fabricante'])) {
-    $fabricante = trim($_POST['fabricante']);
-
-    // Prepara a consulta SQL
-    $sql = "SELECT * FROM produtos WHERE fabricante = ?";
+    // Prepara a consulta SQL para excluir o produto pelo código
+    $sql = "DELETE FROM produtos WHERE cod = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $fabricante);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    // Verifica se existem produtos
-    if ($resultado->num_rows > 0) {
-        while ($row = $resultado->fetch_assoc()) {
-            $produtos[] = $row;
-        }
+    $stmt->bind_param("i", $cod);
+    
+    if ($stmt->execute()) {
+        $mensagem = "Produto com código " . htmlspecialchars($cod) . " foi excluído com sucesso!";
     } else {
-        $produtos = []; // Nenhum produto encontrado
+        $mensagem = "Erro ao excluir o produto com código " . htmlspecialchars($cod) . ".";
     }
 
     $stmt->close();
@@ -36,7 +29,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/stylesGlobal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Home</title>
+    <title>Excluir Produto</title>
 </head>
 <body>
 
@@ -48,40 +41,28 @@ $conn->close();
                 <li><a href="preço.php">Preço</a></li>
                 <li><a href="estoque.php">Estoque</a></li>
                 <li><a href="cadastro.php">Cadastro</a></li>
-                <li><a href="excluir.php">Excluir</a></li>
+                <li><a href="#">Excluir</a></li>
                 <li><a href="atualizar.php">Atualizar</a></li>
-                <li><a href="#">Fabricante</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
         <section class="main-container">
-            <h1>Buscar produtos por fabricante</h1>
+            <h1>Excluir Produto</h1>
             <div class="produtos-cadastrados">
                 <div class="fabri">
-                   <form action="fabricante.php" method="POST">
-                      <label for="fabricante">Nome do fabricante:</label>
-                      <input type="text" name="fabricante" required>
+                   <form action="" method="POST">
+                      <label for="cod">Código do produto:</label>
+                      <input type="text" name="cod" required>
     
-                      <button type="submit">Buscar</button>
+                      <button type="submit">Excluir</button>
                    </form>
 
-                   <div class="prod-fabri">
+                   <div class="mensagem">
                        <?php
-                       if (!empty($produtos)) {
-                           foreach ($produtos as $produto) {
-                               echo "<div class='produto'>";
-                               echo "<h2>" . htmlspecialchars($produto['nome']) . "</h2>";
-                               echo "<p><strong>Código:</strong> " . htmlspecialchars($produto['cod']) . "</p>";
-                               echo "<p><strong>Descrição:</strong> " . htmlspecialchars($produto['descricao']) . "</p>";
-                               echo "<p><strong>Preço de Custo:</strong> R$ " . number_format($produto['preco_custo'], 2, ',', '.') . "</p>";
-                               echo "<p><strong>Preço de Venda:</strong> R$ " . number_format($produto['preco_venda'], 2, ',', '.') . "</p>";
-                               echo "<p><strong>Quantidade:</strong> " . $produto['qtd'] . "</p>";
-                               echo "</div>";
-                           }
-                       } else {
-                           echo "<p>Nenhum produto encontrado para o fabricante: " . htmlspecialchars($fabricante) . "</p>";
+                       if (isset($mensagem)) {
+                           echo "<p>" . $mensagem . "</p>";
                        }
                        ?>
                    </div>
